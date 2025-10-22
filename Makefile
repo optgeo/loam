@@ -25,7 +25,7 @@ list-top: ## List top-level directories in the bucket
 	$(AWS) s3 ls $(BUCKET)
 
 .PHONY: list-path
-list-path: ## List contents of a specific path (usage: make list-path PATH=<path>)
+list-path: ## List contents of a specific path (usage: make list-path PATH_PREFIX=<path>)
 	@if [ -z "$(PATH_PREFIX)" ]; then \
 		echo "Error: PATH_PREFIX is required. Usage: make list-path PATH_PREFIX=59b736a823c8440011d7b0c4/"; \
 		exit 1; \
